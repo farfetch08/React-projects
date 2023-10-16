@@ -143,6 +143,71 @@ const data = [
     return data.find((d) => d.id === id);
   }
 
-// Destructuring
+// ---Destructuring---
 
 const books = getBooks();
+
+const book = getBook(2);
+
+// const title = book.title;
+// const author = book.author;
+
+const {title, author, pages, genres, publicationDate, hasMovieAdaptation} = book;
+
+console.log(author, title);
+
+// const primaryGenre = genres[0];
+// const secondaryGenre = genres[1];
+
+
+// ---RestSpread Operator---
+const [primaryGenre, secondaryGenre, ...otherGenre] = genres;
+
+console.log(primaryGenre, secondaryGenre, otherGenre);
+
+const newGenre = ['epic fantasy', ...genres];
+newGenre;
+
+const updatedBook = {...book, moviePublicationDate: "2001-12-19", pages:1250};
+updatedBook;
+
+
+// ---Template Literals----
+const summary = `${title}, a ${pages}-page long book, was written by ${author} published in ${publicationDate} is a book.`;
+summary;
+
+
+// ---Ternaries Operator---
+const pagesRange = pages>1000 ? "over a thousand" : "less than 1000";
+pagesRange;
+
+
+// ---Arrow Function---
+const numPages = (str) => console.log(str+" pages are there");
+numPages(pages);
+
+
+// ---Short-Circuiting---
+console.log(true && "Some string");
+console.log(false && "Some string");
+console.log(hasMovieAdaptation && "This book has a movie");
+
+// falsy: 0, null, '', undefined
+console.log("jonas" && "Some string");
+console.log(0 && "Some string");
+
+console.log(true || "Some string");
+console.log(false || "Some string");
+
+console.log(book.translations.spanish);
+const spanishTranslation = book.translations.spanish || "NOT TRANSLATED";
+spanishTranslation;
+
+console.log(book.reviews.librarything.reviewsCount);
+const countWrong = book.reviews.librarything.reviewsCount || "no data";
+countWrong;
+
+// using Nullish Coalescing operator -> ??
+const count = book.reviews.librarything.reviewsCount ?? "no data";
+count;
+// it will return 2nd value only when 1st value is null or undefined but not when it is zero or an empty string
