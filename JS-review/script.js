@@ -187,7 +187,7 @@ const numPages = (str) => console.log(str+" pages are there");
 numPages(pages);
 
 
-// ---Short-Circuiting---
+// ---Short -Circuiting---
 console.log(true && "Some string");
 console.log(false && "Some string");
 console.log(hasMovieAdaptation && "This book has a movie");
@@ -221,3 +221,65 @@ function getTotalReviewCount(b){
 }
 
 console.log(getTotalReviewCount(book));
+
+
+// ---Array Map Method---
+const book1 = getBooks();
+
+const x = [1,2,3,4,5].map((el)=>el*2);
+console.log(x);
+
+const titles = book1.map((book)=>book.title);
+titles;
+
+const essentialData = books.map((book)=>({
+  title: book.title,
+  author: book.author
+}));
+essentialData;
+
+
+// ---Array Filter Method---
+const longBooks = books.filter(book=>book.pages>500).filter(book=>book.hasMovieAdaptation);
+longBooks;
+
+const adventureBooks = books.filter(books=>books.genres.includes("adventure"));
+adventureBooks;
+
+
+// ---Array Reduce Method---
+const pagesAllBooks = books.reduce((acc, book)=>acc+book.pages,0);
+pagesAllBooks;
+
+
+// ---Array Sort Mehod---
+const arr = [3,7,1,8,6];
+arr.sort((a,b)=>a-b);
+console.log(arr);
+arr.sort((a,b)=>b-a);
+console.log(arr);
+
+const sorted = arr.slice().sort((a,b)=>a-b);
+sorted;
+arr;
+
+const sortedByPages = books.slice().sort((a,b) => a.pages-b.pages);
+
+
+// ---Working with Immutable Arrays---
+// 1) Add book object to array
+const newBook = {
+  id: 6,
+  title: "Harray Potter and the Chamber of Secrets",
+  author: "J. K. Rowling"
+};
+const bookAfterAdd = [...books, newBook];
+bookAfterAdd;
+
+// 2) Delete book object from array
+const booksAfterDelete = bookAfterAdd.filter((book)=> book.id!=3);
+booksAfterDelete;
+
+// 3) Update book object in the array
+const bookAfterUpdate = booksAfterDelete.map((book)=>book.id===1 ? {...book, pages:12}:book);
+bookAfterUpdate;
