@@ -1,0 +1,67 @@
+* {
+    color: rgb(202, 201, 201);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.card {
+    margin: auto;
+    margin-top: 10%;
+    border: 8px solid gray;
+    border-radius: 1rem;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    width: 400px;
+    padding: 20px;
+
+}
+
+.avatar {
+    position: absolute;
+    width: 220px;
+    border-radius: 50%;
+    border: 8px solid grey;
+    top: 15%;
+    left: 42.5%;
+}
+
+.avatar-name {
+    margin-top: 45%;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+.bd-text {
+    text-align: justify;
+    width: 90%;
+    margin-top: 0px;
+    margin-bottom: 30px;
+}
+
+.skill-list-container {
+    display: flex;
+}
+
+.skill-list {
+    margin-right: 10px;
+    padding: 5px 8px;
+    border: none;
+    border-radius: 1rem;
+    color: black;
+    font-weight: 700;
+}
+
+.red {
+    background: rgb(206, 48, 48);
+}
+.blue {
+    background: rgb(49, 104, 232);
+}
+.yellow {
+    background: rgb(207, 207, 20);
+}
+.green {
+    background: rgb(15, 185, 15);
+}
