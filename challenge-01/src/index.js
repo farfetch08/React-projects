@@ -8,12 +8,7 @@ function App(){
       <Avatar />
       <AvatarName />
       <AvatarBio />
-      <div className='skill-list-container'>
-        <SkillList name="HTML" color="red"/>
-        <SkillList name="CSS" color="blue"/>
-        <SkillList name="JavaScript" color="yellow"/>
-        <SkillList name="NodeJS" color="green"/>
-      </div>
+      <SkillList />
     </main>
   )
 }
@@ -39,10 +34,23 @@ function AvatarBio(){
   )
 }
 
-function SkillList(props){
+function SkillList(){
+  return(
+    <div className='skill-list-container'>
+    <Skill name="HTML" color="rgb(206, 48, 48)"/>
+    <Skill name="CSS" color="rgb(49, 104, 232)"/>
+    <Skill name="JavaScript" color="rgb(207, 207, 20)"/>
+    <Skill name="ReactJS" color="rgb(80, 207, 250)"/>
+    <Skill name="NodeJS" color="rgb(15, 185, 15)"/>
+  </div>
+  )
+}
+
+// className={`skill-list ${props.color}`}
+function Skill(props){
   return(
     <div>
-      <button className={`skill-list ${props.color}`}>{props.name}</button>
+      <button className='skill-list'  style={{backgroundColor: props.color}}>{props.name}</button>
     </div>
   )
 }
